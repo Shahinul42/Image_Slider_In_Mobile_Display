@@ -1,0 +1,120 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-size: 1.6rem;
+    user-select: none;
+}
+
+:root {
+    --Phone_height: 70vh;
+    --Image_height: 51.8vh;
+    --Top_margin: 9.9vh;
+}
+
+.Container {
+    display: flex;
+    /* align-items: center; */
+    justify-content: center;
+    position: relative;
+}
+
+.Right_site {
+    position: absolute;
+    right: 0;
+    width: 50%;
+    height: var(--Phone_height);
+    /* border: .5rem solid #000; */
+    z-index: 10;
+}
+
+.Left_site {
+    position: absolute;
+    left: 0;
+    width: 50%;
+    height: var(--Phone_height);
+    /* border: .5rem solid #000; */
+    z-index: 10;
+}
+
+img.Perent_image {
+    width: auto;
+    height: var(--Phone_height);
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+    z-index: 9;
+}
+
+.Container img.Child_image {
+    width: auto;
+    height: var(--Image_height);
+    position: absolute;
+    top: var(--Top_margin);
+    z-index: var(--z-index);
+
+    /*TRANSFORM*/
+
+    transform: translateX(var(--translateX)) scale(var(--scale));
+    -webkit-transform: translateX(var(--translateX)) scale(var(--scale));
+    -moz-transform: translateX(var(--translateX)) scale(var(--scale));
+    -ms-transform: translateX(var(--translateX)) scale(var(--scale));
+    -o-transform: translateX(var(--translateX)) scale(var(--scale));
+
+    /*TRANSITION*/
+
+    transition: all .5s ease-in-out;
+    -webkit-transition: all .5s ease-in-out;
+    -moz-transition: all .5s ease-in-out;
+    -ms-transition: all .5s ease-in-out;
+    -o-transition: all .5s ease-in-out;
+
+    /*BORDERRADIUS*/
+
+    border-radius: .3rem;
+    -webkit-border-radius: .3rem;
+    -moz-border-radius: .3rem;
+    -ms-border-radius: .3rem;
+    -o-border-radius: .3rem;
+}
+
+.Container img.Child_image:nth-child(2) {
+    --z-index: 1;
+    --translateX: 110%;
+    --scale: .8;
+}
+
+.Container img.Child_image:nth-child(3) {
+    --z-index: 2;
+    --translateX: 60%;
+    --scale: .9;
+}
+
+.Container img.Child_image:nth-child(4) {
+    --z-index: 5;
+    --translateX: 0;
+    --scale: 1;
+}
+
+.Container img.Child_image:nth-child(5) {
+    --z-index: 2;
+    --translateX: -60%;
+    --scale: .9;
+}
+
+.Container img.Child_image:nth-child(6) {
+    --z-index: 1;
+    --translateX: -110%;
+    --scale: .8;
+}
